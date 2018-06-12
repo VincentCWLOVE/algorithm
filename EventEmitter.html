@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+
+<input type="text" value="123">
+<h1>123</h1>
+<h2>123</h2>
+
+
+
+<script>
+class EventEmitter {
+	constructor() {
+		// 消息队列
+	    this.events = {};
+	}
+
+	// 发布消息
+  	emit(eventName, data) {
+    	const event = this.events[eventName];
+    	if (event) {
+      		event.forEach(fn => {
+
+        		fn.call(null, data);
+
+      		});
+    	}
+	}
+
+	// 订阅消息
+  	subscribe(eventName, fn) {
+
+    	if (!this.events[eventName]) {
+
+      		this.events[eventName] = [];
+    	}
+
+    	this.events[eventName].push(fn);
+
+    	return () => {
+    		// 返回满足条件的消息
+      		this.events[eventName] = this.events[eventName].filter(eventFn => fn !== eventFn);
+    	}
+  	}
+
+
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+
+	let input = document.querySelector('input[type="text"]');
+   
+   	let h1 = document.querySelector('h1');
+   	let h2 = document.querySelector('h2');
+
+
+
+  	let emitter = new EventEmitter();
+
+  	emitter.subscribe('event:name-changed', data => {
+
+    	h1.innerHTML = data.name;
+
+    	h2.innerHTML = data.name;
+    	
+  	});
+
+  	input.addEventListener('input', () => {
+
+    	emitter.emit('event:name-changed', { name: input.value });
+    	
+  	})
+
+
+});
+
+</script>
+</body>
+</html>
