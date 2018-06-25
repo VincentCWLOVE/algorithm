@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="a">a
+	<div class="b">b
+		<div class="c">c
+			<div id="d">d</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	class Delegate  {
+		constructor(target,parentNode,fn) {
+
+			this.target = target
+
+			this.parseNode = parentNode
+
+			this.fn = fn
+			
+		}
+	
+		// methods
+
+		trigger(){
+
+			if(this.target = this.parseNode) fn();
+
+			
+
+			
+		}
+	}
+
+	document.onclick = (event) => {
+		let event = event || widows.event
+
+		let target = event.target || event.srcElement
+	}
+</script>
+</body>
+</html>
