@@ -23,3 +23,8 @@
 ### 传值 JavaScript EventEmitter
 
 [传值 JavaScript EventEmitter](EventEmitter.html)
+
+
+### 兼容 `video`标签
+
+[HTML5 video 标签浏览器兼容](video.md)
