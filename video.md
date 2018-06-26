@@ -15,7 +15,7 @@
 不可以只有MP4格式，一定要引入Ogg格式视频，否则在火狐上会不兼容报错
 
 ```html
-    <video controls autoplay="true" loop="true" preload="auto">
+    <video controls autoplay="true" loop="true" preload="auto" poster="posterimage.jpg">
         <source src="movie/movie.mp4" type="video/mp4">
         <source src="movie/movie.ogv" type="video/ogg">
         <p style="padding: 50px;color:#fff;text-align: center">您的浏览器不支持 HTML5 video 标签。</p>
@@ -55,4 +55,8 @@ video{
 }
 
 ```
+
+四、桌面浏览器兼容性
+
+![video_compatibility](video_compatibility.jpg)
 
