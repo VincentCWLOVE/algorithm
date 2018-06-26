@@ -28,3 +28,23 @@
 
 ```
 
+```css
+// 使用 postcss 中的 postcss-write-svg
+@svg 1px-border { 
+    height: 2px; 
+    @rect { 
+        fill: var(--color, black); 
+        width: 100%; 
+        height: 50%; 
+    } 
+}
+.cell {
+    border: 1px solid transparent;
+    border-image: svg(1px-border param(--color #00b1ff)) 2 2 stretch;
+    //border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='2px'%3E%3Crect fill='%23009dff' width='100%25' height='50%25'/%3E%3C/svg%3E") 2 2 stretch;
+   
+}
+
+
+```
+
