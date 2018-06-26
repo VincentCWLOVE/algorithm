@@ -24,6 +24,14 @@
 
 [传值 JavaScript EventEmitter](EventEmitter.html)
 
+### 节流
+
+[节流](throttle.js)
+
+### 防抖
+
+[防抖](debounce.js)
+
 
 ### 兼容 `video`标签
 
