@@ -58,5 +58,5 @@ video{
 
 四、桌面浏览器兼容性
 
-![video_compatibility](video_compatibility.jpg)
+![video_compatibility](./video_compatibility.jpg)
 
